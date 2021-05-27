@@ -1,4 +1,4 @@
-
+application was run using WSL with the ./bin/run command for part 1 and ./bin/test for part 2
 
 
 | test case | expected results | actual results | verdict |
