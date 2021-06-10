@@ -1,23 +1,12 @@
 defmodule Grades.Calculator do
   def percentage_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
-    avg_homework = avg(homework)
-    avg_labs = avg(labs)
-    mark = calculate_grade(avg_labs, avg_homework, midterm, final)
-    round(mark * 100)
+    round(calculate_grade(avg(labs), avg(homework), midterm, final)*100)
   end
 
   def letter_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
     avg_homework = avg(homework)
-    avg_labs = avg(labs)
-    avg_exams = (midterm + final) / 2
-
-    num_labs =
-      labs
-      |> Enum.reject(fn mark -> mark < 0.25 end)
-      |> Enum.count()
-
-      if failed_to_participate(avg_homework,avg_exams, num_labs ) do "EIN"
-      else mark = calculate_grade(avg_labs, avg_homework, midterm, final)
+      if failed_to_participate(avg_homework,midterm, final, lab_count(labs) ) do "EIN"
+      else mark = calculate_grade(avg(labs), avg_homework, midterm, final)
 
       cond do
         mark > 0.895 -> "A+"
@@ -37,15 +26,8 @@ defmodule Grades.Calculator do
 
   def numeric_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
     avg_homework = avg(homework)
-    avg_labs = avg(labs)
-    avg_exams = (midterm + final) / 2
-    num_labs =
-      labs
-      |> Enum.reject(fn mark -> mark < 0.25 end)
-      |> Enum.count()
-
-    if failed_to_participate(avg_homework,avg_exams, num_labs ) do 0
-    else mark = calculate_grade(avg_labs, avg_homework, midterm, final)
+    if failed_to_participate(avg_homework, midterm, final, lab_count(labs) ) do 0
+    else mark = calculate_grade(avg(labs), avg_homework, midterm, final)
 
       cond do
         mark > 0.895 -> 10
@@ -69,12 +51,17 @@ defmodule Grades.Calculator do
       end
 end
 
-def failed_to_participate(hw, exams, labs) do
-  hw < 0.4 || exams < 0.4 || labs < 3
+def failed_to_participate(hw, mid, fin, labs) do
+  hw < 0.4 || (mid + fin) / 2 < 0.4 || labs < 3
 
 end
-def calculate_grade(labs, hw, mid, final) do
-  0.2 * labs + 0.3 * hw + 0.2 * mid + 0.3 * final
+def calculate_grade(labs, hw, mid, fin) do
+  0.2 * labs + 0.3 * hw + 0.2 * mid + 0.3 * fin
 
+end
+def lab_count(labs)do
+  labs
+      |> Enum.reject(fn mark -> mark < 0.25 end)
+      |> Enum.count()
 end
 end
