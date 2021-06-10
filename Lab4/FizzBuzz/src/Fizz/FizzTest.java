@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 class FizzTest {
 	FizzBuzz fiz = new FizzBuzz();
 	@Test
-	void printNumberList() {
-		assertEquals(1, fiz.printlist(1));
+	void buzz() {
+		assertEquals("1", fiz.buzz(1));
 		
 	}
 
