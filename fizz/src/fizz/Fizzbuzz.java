@@ -1,0 +1,10 @@
+package fizz;
+
+public class Fizzbuzz {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
