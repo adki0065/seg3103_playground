@@ -2,11 +2,17 @@ package Fizz;
 
 public class FizzBuzz {
 	
-	
-
-	public Integer printlist() {
-		// TODO Auto-generated method stub
-		return 1;
+	public int[] printlist(int n) {
+		int[] numList = {};
+		
+		for(int i=0; i<n+1; i++) {
+			numList[i] = i+1;
+			
+		}
+		
+		return numList;
 	}
+
+	
 
 }

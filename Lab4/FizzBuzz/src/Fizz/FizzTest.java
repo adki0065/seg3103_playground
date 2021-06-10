@@ -7,7 +7,7 @@ class FizzTest {
 	FizzBuzz fiz = new FizzBuzz();
 	@Test
 	void printNumberList() {
-		assertEquals(1, fiz.printlist());
+		assertEquals(1, fiz.printlist(1));
 		
 	}
 
