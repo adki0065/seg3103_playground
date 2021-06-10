@@ -7,13 +7,22 @@ class FizzTest {
 	FizzBuzz fiz = new FizzBuzz();
 	@Test
 	void printnum() {
-		assertEquals("1", fiz.buzz(1));
+		int[] arr = {1};
+		int[] expected = fiz.buzz(1);
+		System.out.println(arr[0]);
+		
+		assertEquals(arr[0], expected[0]);
 		
 	}
 	
+	@Test
 	void getlist() {
-		int[] arr = {1,2,3};
-		assertEquals(arr, fiz.buzz(3));
+		int[] arr = {1, 2, 3};
+		int[] expected = fiz.buzz(3);
+		for (int i=0; i<3; i++) {
+			assertEquals(arr[i], expected[i]);
+		}
+	
 	}
 	
 
