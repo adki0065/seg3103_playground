@@ -54,12 +54,13 @@ class TwitterTest {
         assertEquals(false, actual);
     }
 
-    // @Test
-    // void isMentionned_lookForAtSymbol() {
-    //   // Assuming a tweet like "hello @me"
-    //   // isMentionned("me") should be true
-    //   // isMentionned("you") should be false
-    // }
+     @Test
+    void isMentionned_lookForAtSymbol() {
+       // Assuming a tweet like "hello @me"
+       // isMentionned("me") should be true
+       // isMentionned("you") should be false
+    
+    }
 
     // @Test
     // void isMentionned_dontReturnSubstringMatches() {
