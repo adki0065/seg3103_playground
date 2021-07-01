@@ -65,3 +65,4 @@ def lab_count(labs)do
       |> Enum.count()
 end
 end
+end
