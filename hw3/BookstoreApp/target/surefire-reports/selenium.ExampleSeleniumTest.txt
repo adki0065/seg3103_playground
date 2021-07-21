@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: selenium.ExampleSeleniumTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 44.738 s <<< FAILURE! - in selenium.ExampleSeleniumTest
+addBookTest  Time elapsed: 4.415 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Successfully added book> but was: <Book with same id already exist>
+	at selenium.ExampleSeleniumTest.addBookTest(ExampleSeleniumTest.java:220)
+
+adminLogoutTest  Time elapsed: 3.592 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: < You have been logged out> but was: <You have been logged out>
+	at selenium.ExampleSeleniumTest.adminLogoutTest(ExampleSeleniumTest.java:184)
+
