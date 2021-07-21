@@ -58,7 +58,7 @@ class ExampleSeleniumTest {
 
 
   @Test
-  public void adminLoginTest() { // test cases: 1.1
+  public void adminLoginTest() { // test cases: 1.1, F8.a 
   driver.get("http://localhost:8080/admin");
   WebElement username = driver.findElement(By.id("loginId"));
   username.sendKeys("admin");
@@ -81,7 +81,7 @@ class ExampleSeleniumTest {
 }
 
 @Test
-public void adminLoginFailTest() { // test cases: 1.2
+public void adminLoginFailTest() { // test cases: 1.2, F8.b 
 driver.get("http://localhost:8080/admin");
 WebElement username = driver.findElement(By.id("loginId"));
 username.sendKeys("amorgd");
@@ -150,7 +150,7 @@ assertEquals(expected, actual);
   }
 
   @Test
-  public void addBookTest() { // test cases: 3.1
+  public void addBookTest() { // test cases: 3.1, F1.a, F1.1.a  
   driver.get("http://localhost:8080/admin");
   WebElement username = driver.findElement(By.id("loginId"));
   username.sendKeys("admin");
@@ -185,7 +185,7 @@ assertEquals(expected, actual);
 }
 
 @Test
-public void addBookMissingTest() { // test cases: 3.2
+public void addBookMissingTest() { // test cases: 3.2 F1.b
 driver.get("http://localhost:8080/admin");
 WebElement username = driver.findElement(By.id("loginId"));
 username.sendKeys("admin");
@@ -253,7 +253,7 @@ assertEquals(expected, actual);
 }
 
 @Test
-public void searchCategory() { // test cases: 4.1
+public void searchCategory() { // test cases: 4.1, F2.1.b, F2.b 
   driver.get("http://localhost:8080/");
   driver.findElement(By.id("search")).click();
   driver.findElement(By.id("search")).sendKeys("fiction");
@@ -264,7 +264,7 @@ public void searchCategory() { // test cases: 4.1
 } 
 
 @Test
-public void searchAllCategories() { // test cases: 4.2
+public void searchAllCategories() { // test cases: 4.2, F2.2.a, F2.a,   
   driver.get("http://localhost:8080/");
   driver.findElement(By.id("searchBtn")).click();
   WebElement h1 = driver.findElement(By.id("title-hall001"));
@@ -280,7 +280,7 @@ public void searchAllCategories() { // test cases: 4.2
 } 
 
 @Test
-public void searchEmptyCategoryTest() { // test cases: 4.3
+public void searchEmptyCategoryTest() { // test cases: 4.3, F2.2.b
   driver.get("http://localhost:8080/");
   driver.findElement(By.id("search")).click();
   driver.findElement(By.id("search")).sendKeys("whales");
@@ -295,7 +295,7 @@ public void searchEmptyCategoryTest() { // test cases: 4.3
 } 
 
 @Test
-public void removeBookTest() { // test cases: 5.1
+public void removeBookTest() { // test cases: 5.1, F7.a, 
 driver.get("http://localhost:8080/admin");
 WebElement username = driver.findElement(By.id("loginId"));
 username.sendKeys("admin");
@@ -321,7 +321,7 @@ assertTrue(true);
 }
 
 @Test
-  public void orderBookTest() { // test cases: 6.1, 7.1
+  public void orderBookTest() { // test cases: 6.1, 7.1, F3.a, F4.a, F4.1.a    
     driver.get("http://localhost:8080/");
     driver.findElement(By.id("searchBtn")).click();
     driver.findElement(By.id("order-hall002")).click();
@@ -349,7 +349,7 @@ assertTrue(true);
   }
 
   @Test
-  public void UpdateBookOrderTest() { // test cases: 8.1
+  public void UpdateBookOrderTest() { // test cases: 8.1, F5.a 
     driver.get("http://localhost:8080/");
     
     driver.findElement(By.id("searchBtn")).click();
@@ -363,7 +363,7 @@ assertTrue(true);
   }
 
   @Test
-  public void deleteteBookOrderTest() { // test cases:8.2
+  public void deleteteBookOrderTest() { // test cases:8.2, F4.1.b, F5.1.a  
     driver.get("http://localhost:8080/");
     
     driver.findElement(By.id("searchBtn")).click();
@@ -383,7 +383,7 @@ assertTrue(true);
   }
 
   @Test
-  public void checkoutTest() { // test cases:9.1
+  public void checkoutTest() { // test cases:9.1, F6.a, F6.1.a  
     driver.get("http://localhost:8080/");
     driver.findElement(By.id("searchBtn")).click();
     driver.findElement(By.id("order-hall002")).click();
